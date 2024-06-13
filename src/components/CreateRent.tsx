@@ -51,6 +51,10 @@ const CreateRent = observer(() => {
     }
 
     const clearInputs = () => {
+        titleRef.current!.value = '';
+        daysRef.current!.value = '';
+        selectRef.current!.value = '3+';
+        priceRef.current!.value = '';
         console.log('INPUTS CLEARED');
     }
 
@@ -74,10 +78,6 @@ const CreateRent = observer(() => {
             }));
         }
     }, [])
-
-    useEffect(() => {
-        console.log(newAppart);
-    }, [newAppart])
 
     return (
         <section>

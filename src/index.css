@@ -6,7 +6,7 @@
 
 
 .sectionHeading {
-  @apply text-[24px] font-semibold mb-4;
+  @apply text-[24px] font-semibold;
 }
 
 .createRentInputDiv {

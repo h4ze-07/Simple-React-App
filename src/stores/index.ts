@@ -1,10 +1,11 @@
 import { makeAutoObservable } from "mobx";
 
-type TAppartment = {
+export type TAppartment = {
     id: string,
     rooms: string,
     name: string,
     price: number,
+    days: number,
 }
 
 export class Apartments {
@@ -24,9 +25,16 @@ export class Apartments {
         this.list = this.list.filter(i => i.id !== id);
     }
 
+    rentAppart(id: string) {
+        const item = this.list.filter(i => i.id === id);
+        this.removeFromList(id);
+        this.rentedList.push(item[0]);
+    }
 
     cancelRent(id: string) {
-        this.list = this.rentedList.filter(i => i.id !== id);
+        const item = this.rentedList.filter(i => i.id === id);
+        this.rentedList = this.rentedList.filter(i => i.id !== id);
+        this.addToList(item[0]);
     }
 
     get totalApparts() {

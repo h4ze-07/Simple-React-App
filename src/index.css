@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.sectionHeading {
+  @apply text-[24px] font-semibold mb-4;
+}
+
+.createRentInputDiv {
+  @apply flex flex-col gap-2
+}
+
+.createRentInput {
+  @apply bg-transparent border rounded-[5px] px-3 h-[40px] outline-none focus:border-black placeholder:text-stone-200 placeholder:text-[12px];
+}
+
+.articleStyles {
+  @apply border rounded-lg flex py-3 px-6;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background: rgb(222, 220, 209);
+}
